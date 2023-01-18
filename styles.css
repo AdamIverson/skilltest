@@ -2,9 +2,13 @@ body {
   background-color: bisque;
 }
 
+h2 {
+  padding: 10px;
+  color: rgb(234, 163, 75);
+}
+
 li {
   margin: 4px;
-  border: 2px solid black;
   width: 25%;
 }
 
@@ -14,23 +18,23 @@ ol {
 }
 
 #stories {
-  border: 5px solid blue;
   border-radius: 25px;
-  background-color: grey;
+  background-color: rgb(129, 110, 110);
   color: white;
   width: 50%;
   margin: 0px auto;
-  box-shadow: 10px 9px 100px 10px rgb(5, 5, 167);
+  box-shadow: 10px 9px 100px 10px rgb(117, 98, 75);
+  padding: 0px auto;
+  display: column-flex;
 }
 
 
 .btn {
   border-radius: 20px;
-  background-color: red;
+  background-color: rgb(190, 68, 11);
   color: white;
   font-size: medium;
-  padding: 15px;
-  box-shadow: 5px 5px black;
+  padding: 10px;
 }
 
 .btn:active {
@@ -39,6 +43,10 @@ ol {
 
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: auto;
+}
+
+.listBox {
+  
 }
