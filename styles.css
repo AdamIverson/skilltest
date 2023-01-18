@@ -1,0 +1,10 @@
+#stories {
+  border: 5px solid red;
+  background-color: grey;
+  color: white;
+}
+
+li {
+  margin: 4px;
+}
+

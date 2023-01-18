@@ -1,23 +1,56 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="styles.css">
     <title>WHCC Hacker News Reader</title>
     <script type="text/javascript">
         function getStories() {
             fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
                 .then((response) => {
+                    // const reader = response.body.getReader();
+                    // console.log(reader);
+                    console.log(response);
                     return response.json();
                 })
                 .then((myJson) => {
-                    document.getElementById("stories").innerHTML = myJson;
+                    console.log('myJson:', myJson);
+                    console.log('myJson[0]:', myJson[0]);
+                    document.getElementById("storyList").innerHTML = myJson.map(item => {
+                        return (`
+                            <li>
+                                ${item}
+                            </li>
+                        `)
+                    });
                 });
         }
         getStories();
+
+        // function fetchStories() {
+        //     fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
+        //         .then(response => response.json)
+        //         .then(function (data) {
+        //             console.log(data);
+        //         })
+        // }
+
+        // fetchStories();
+
+        // const testFetch = fetchStories();
+        // console.log('testFetch:', testFetch);
+
     </script>
 </head>
+
 <body>
     <h1>WHCC Hacker News Reader</h1>
-    <div id="stories"></div>
+    <div id="stories">
+        <button id="refresh" onclick="getStories()">refresh feed</button>
+        <ol id="storyList">
+        </ol>
+    </div>
 </body>
+
 </html>
